@@ -3,9 +3,9 @@
     <br>
        <img src="/src/assets/react.svg" alt="React Logo" width="200" />
     <hr/>
-    React Router Dom V6 + TypeScript
+    Lazy Load + TypeScript
   </h1>
-  <p>A simple React Router Dom template model V6.</p>
+  <p>Lazy load for each component and each module.</p>
 </div>
 
 ## Technologies
