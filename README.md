@@ -14,3 +14,9 @@
 - Vite v4
 - Typescript
 - React Router Dom V6
+
+## Branches
+
+- Lazy load react router dom 6
+- Lazy load nested react router dom 6
+- component compound
