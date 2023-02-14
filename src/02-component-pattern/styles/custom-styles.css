@@ -1,0 +1,26 @@
+.bg-dark {
+  background-color: #03056b;
+}
+
+.color-white {
+  color: aliceblue;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.custom-image {
+  border-radius: 18px;
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+
+.custom-buttons button {
+  color: aliceblue;
+  border-color: aliceblue;
+}
+
+.custom-buttons div {
+  border-color: aliceblue;
+}

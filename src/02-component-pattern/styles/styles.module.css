@@ -1,5 +1,5 @@
 .productCard {
-  background-color: #bccace;
+  background-color: #dee8eb;
   border-radius: 15px;
   color: black;
   padding-bottom: 5px;
@@ -36,12 +36,6 @@
 
 .buttonMinus:hover {
   background-color: rgba(0, 0, 0, 0.1);
-}
-
-.containerDescription {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .countLabel {

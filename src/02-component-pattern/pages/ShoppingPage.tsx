@@ -4,6 +4,7 @@ import {
   ProductTitle,
   ProductImage,
 } from '../components';
+import '../styles/custom-styles.css';
 import coffeeImg from '../assets/coffee-mug.png';
 
 const product = {
@@ -15,7 +16,7 @@ const product = {
 export const ShoppingPage = () => {
   return (
     <div>
-      <h1>Shopping Store</h1>
+      <h1 style={{ color: 'gray' }}>Shopping Store</h1>
       <div
         style={{
           display: 'flex',
@@ -23,16 +24,32 @@ export const ShoppingPage = () => {
           flexWrap: 'wrap',
         }}
       >
-        <ProductCard product={product}>
-          <ProductCard.Image img={product.img} />
+        <ProductCard product={product} className="bg-dark color-white">
+          <ProductCard.Image className="custom-image" />
           <ProductCard.Title />
-          <ProductCard.Buttons />
+          <ProductCard.Buttons className="custom-buttons" />
         </ProductCard>
 
-        <ProductCard product={product}>
-          <ProductImage />
-          <ProductTitle title={'coffee'} />
-          <ProductButtons />
+        <ProductCard product={product} className="bg-dark color-white">
+          <ProductImage className="custom-image" />
+
+          <ProductTitle title={'Coffee Val'} className="font-bold" />
+          <ProductButtons className="custom-buttons" />
+        </ProductCard>
+
+        <ProductCard product={product} style={{ backgroundColor: '#999' }}>
+          <ProductImage
+            style={{
+              boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.75)',
+            }}
+          />
+          <ProductTitle
+            style={{
+              color: '#03056b',
+              fontWeight: 900,
+            }}
+          />
+          <ProductButtons style={{ justifyContent: 'end' }} />
         </ProductCard>
       </div>
     </div>
