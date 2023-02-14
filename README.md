@@ -3,7 +3,7 @@
     <br>
        <img src="/src/assets/react.svg" alt="React Logo" width="200" />
     <hr/>
-    Lazy Load + TypeScript
+    React Advanced - TypeScript
   </h1>
   <p>Lazy load for each component and each module.</p>
 </div>
@@ -15,9 +15,9 @@
 - Typescript
 - React Router Dom V6
 
-## Brach - component-extend-styles
+## Branch - component-extend-styles
 
-integrate styles with className and in-line classes both compound-components pattern
+Integrate styles with className and In-line classes both compound-component pattern.
 
 ```
 Example
