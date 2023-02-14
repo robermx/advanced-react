@@ -3,9 +3,9 @@
     <br>
        <img src="/src/assets/react.svg" alt="React Logo" width="200" />
     <hr/>
-    Lazy Load + TypeScript
+    React Advanced - TypeScript
   </h1>
-  <p>Lazy load for each component and each module.</p>
+  <p>You can see all of Branches</p>
 </div>
 
 ## Technologies
@@ -20,3 +20,4 @@
 - Lazy load react router dom 6
 - Lazy load nested react router dom 6
 - component compound
+- component-extend-styles
