@@ -5,7 +5,7 @@
     <hr/>
     React Advanced - TypeScript
   </h1>
-  <p>Lazy load for each component and each module.</p>
+  <p>Adding props configuration in component pattern</p>
 </div>
 
 ## Technologies
