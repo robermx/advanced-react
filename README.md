@@ -5,7 +5,7 @@
     <hr/>
     React Advanced - TypeScript
   </h1>
-  <p>Adding props configuration in component pattern</p>
+  <p>Adding props configuration on different component in char section</p>
 </div>
 
 ## Technologies
@@ -15,26 +15,51 @@
 - Typescript
 - React Router Dom V6
 
-## Branch - component-extend-styles
+## Branch - component-control-props
 
-Integrate styles with className and In-line classes both compound-component pattern.
+In this section we will learn how to give our user or co-worker control over the properties and state of our component, usually this pattern is the one that is traditionally used in forms, that is:
 
 ```
 Example
 
-<ProductCard product={product} className="bg-dark color-white">
-  <ProductCard.Image />
-  <ProductCard.Title />
-  <ProductCard.Buttons />
-</ProductCard>
-
-<ProductCard product={product} className="bg-dark color-white">
-  <ProductImage style={{
-    boxShadow: '0px 0px 15px 1px rgba(0,0,0,0.75)',
-  }}
-  />
-  <ProductTitle />
-  <ProductButtons />
-</ProductCard>
+<div>
+  <h1 style={{ color: 'gray' }}>Shopping Store</h1>
+  <div
+    style={{
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    }}
+  >
+    {products.map((product) => (
+      <ProductCard
+        product={product}
+        className="bg-dark color-white"
+        key={product.id}
+        onChange={onProductCountChange}
+        value={shoppingChart[product.id]?.count || 0}
+      >
+        <ProductImage className="custom-image" />
+        <ProductTitle className="font-bold" />
+        <ProductButtons className="custom-buttons" />
+      </ProductCard>
+    ))}
+  </div>
+  <div className="shopping-card">
+    {Object.entries(shoppingChart).map(([key, product]) => (
+      <ProductCard
+        key={key}
+        product={product}
+        className="bg-dark color-white"
+        style={{ width: '100px' }}
+        value={product.count}
+        onChange={onProductCountChange}
+      >
+        <ProductImage className="custom-image" />
+        <ProductButtons className="custom-buttons" />
+      </ProductCard>
+    ))}
+  </div>
+</div>
 
 ```
