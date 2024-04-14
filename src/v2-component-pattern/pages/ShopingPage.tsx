@@ -3,8 +3,9 @@ import ProductCard from "../components/ProductCard";
 const product = {
   id: "1",
   title: "Coffee cup",
-  price: 100,
-  description: "This is a coffee cup",
+  price: 10,
+  description: "This is a coffee cup, lorem ipsum dolor sit amet.",
+  image: "./coffee-mug.png",
 };
 
 const ShopingPage = () => {
