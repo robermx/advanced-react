@@ -4,8 +4,9 @@ import {
   Route,
   NavLink,
   Navigate,
-} from 'react-router-dom';
-import logo from '../assets/react.svg';
+} from "react-router-dom";
+import logo from "../assets/react.svg";
+import ShopingPage from "../v2-component-pattern/pages/ShopingPage";
 
 export const Navigation = () => {
   return (
@@ -17,7 +18,7 @@ export const Navigation = () => {
             <li>
               <NavLink
                 to="/home"
-                className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
               >
                 Shopping
               </NavLink>
@@ -25,7 +26,7 @@ export const Navigation = () => {
             <li>
               <NavLink
                 to="/about"
-                className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
               >
                 About
               </NavLink>
@@ -33,7 +34,7 @@ export const Navigation = () => {
             <li>
               <NavLink
                 to="/users"
-                className={({ isActive }) => (isActive ? 'nav-active' : '')}
+                className={({ isActive }) => (isActive ? "nav-active" : "")}
               >
                 User
               </NavLink>
@@ -43,7 +44,7 @@ export const Navigation = () => {
         <Routes>
           <Route path="about" element={<h1>About Page</h1>} />
           <Route path="users" element={<h1>Users Page</h1>} />
-          <Route path="home" element={<h1>home Page</h1>} />
+          <Route path="home" element={<ShopingPage />} />
           <Route path="/*" element={<Navigate to="home" replace />} />
         </Routes>
       </div>
