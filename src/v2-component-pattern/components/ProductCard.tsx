@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactElement, createContext } from "react";
 import useProduct from "../hooks/useProduct";
 import noImage from "../assets/no-image.jpg";
 import styles from "../styles/styles.module.css";
@@ -13,11 +13,28 @@ interface Product {
 
 interface ProductCardProps {
   product: Product;
+  children?: ReactElement | ReactElement[];
 }
 
+interface ProductCardComponent extends FC<ProductCardProps> {
+  Title: typeof ProductTitle;
+  Image: typeof ProductImage;
+  Description: typeof ProductDescription;
+  Price: typeof ProductPrice;
+  Buttons: typeof ProductButtons;
+}
 interface ProductTitleProps {
   title: string;
 }
+
+interface ProductContextProps {
+  counter: number;
+  increaseBy: (value: number) => void;
+  product: Product;
+}
+
+const ProductContext = createContext<ProductContextProps | null>(null);
+const { Provider } = ProductContext;
 
 export const ProductTitle: FC<ProductTitleProps> = ({ title }) => {
   return <h2>{title}</h2>;
@@ -82,21 +99,27 @@ export const ProductButtons: FC<ProductButtonsProps> = ({
   );
 };
 
-const ProductCard: FC<ProductCardProps> = (props) => {
-  const { product } = props;
-  const { title, price, description, image } = product;
+export const ProductCard: ProductCardComponent = ({ product, children }) => {
+  // const { title, price, description, image } = product;
 
   const { counter, increaseBy } = useProduct();
 
   return (
-    <div className={styles.productCard}>
-      <ProductTitle title={title} />
+    <Provider value={{ counter, increaseBy, product }}>
+      <div className={styles.productCard}>
+        {children}
+        {/* <ProductTitle title={title} />
       <ProductImage image={image} title={title} />
       <ProductDescription description={description} />
       <ProductPrice price={price} />
-      <ProductButtons counter={counter} increaseBy={increaseBy} />
-    </div>
+      <ProductButtons counter={counter} increaseBy={increaseBy} /> */}
+      </div>
+    </Provider>
   );
 };
 
-export default ProductCard;
+ProductCard.Title = ProductTitle;
+ProductCard.Image = ProductImage;
+ProductCard.Description = ProductDescription;
+ProductCard.Price = ProductPrice;
+ProductCard.Buttons = ProductButtons;
