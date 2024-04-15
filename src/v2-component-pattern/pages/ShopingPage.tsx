@@ -1,11 +1,11 @@
 import {
+  ProductTitle,
+  ProductImage,
+  ProductDescription,
+  ProductPrice,
   ProductButtons,
   ProductCard,
-  ProductDescription,
-  ProductImage,
-  ProductPrice,
-  ProductTitle,
-} from "../components/ProductCard";
+} from "../components";
 
 const product = {
   id: "1",
@@ -20,20 +20,23 @@ const ShopingPage = () => {
     <div>
       <h1>Shoping Store</h1>
       <hr />
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+      <br />
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "1.5rem" }}>
         <ProductCard product={product}>
-          <ProductCard.Title title={product.title} />
-          <ProductCard.Image image={product.image} title={product.title} />
-          <ProductCard.Description description={product.description} />
-          <ProductCard.Price price={product.price} />
-          {/* <ProductCard.Buttons /> */}
+          <ProductCard.Title title="Bachas Coffee" />
+          <ProductCard.Image />
+          <ProductCard.Description
+            description={"Cafe colombiano con una gran aceptación"}
+          />
+          <ProductCard.Price price={50} />
+          <ProductCard.Buttons />
         </ProductCard>
         <ProductCard product={product}>
-          <ProductTitle title={product.title} />
-          <ProductImage image={product.image} title={product.title} />
-          <ProductDescription description={product.description} />
-          <ProductPrice price={product.price} />
-          {/* <ProductButtons /> */}
+          <ProductTitle />
+          <ProductImage image={product.image} />
+          <ProductDescription />
+          <ProductPrice />
+          <ProductButtons />
         </ProductCard>
       </div>
     </div>
